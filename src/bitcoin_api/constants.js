@@ -1,5 +1,5 @@
-const RPC_USER = "cpbm"
-const RPC_PASSWORD = "123bm456"
+const RPC_USER = process.env.RPC_USER
+const RPC_PASSWORD = process.env.RPC_PASSWORD
 
 //urls that bitcoind server uses
 const RPC_CONNECTION_MAIN_URL = "http://" + RPC_USER + ":" + RPC_PASSWORD + "@127.0.0.1:8332/" //for real network
