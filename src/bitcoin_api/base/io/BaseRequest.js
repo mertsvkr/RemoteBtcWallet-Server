@@ -7,5 +7,4 @@ class BaseRequest {
         }
     }
 }
-
-exports = BaseRequest
+module.exports = BaseRequest

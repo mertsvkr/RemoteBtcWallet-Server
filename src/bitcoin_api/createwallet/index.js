@@ -4,6 +4,6 @@ const postRequest = require("../base/http/postRequest")
 
 exports.createWallet = async (walletName) => {
     var request = new Request({ method: "createwallet", params: [walletName] })
-    var htmlResponse = postRequest(request)
+    var htmlResponse = await postRequest(request)
     return new Response(htmlResponse)
 }

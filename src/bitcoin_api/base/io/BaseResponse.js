@@ -6,7 +6,10 @@ class BaseResponse {
         else {
             this.error = htmlResponse.data?.error
         }
+        if (this.error) {
+            console.error(this.error)
+        }
     }
 }
 
-exports = BaseResponse
+module.exports = BaseResponse
