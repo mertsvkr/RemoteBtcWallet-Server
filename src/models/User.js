@@ -12,7 +12,10 @@ const userSchema = mongoose.Schema({
         required: true,
         minLength: 6
     },
-
+    wallet: {
+        type: String,
+        required: true,
+    }
 })
 
 userSchema.statics.findByEmail = async (email) => {
