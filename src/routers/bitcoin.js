@@ -4,7 +4,8 @@ const bitcoinControllers = require("../controller/bitcoin")
 const router = express.Router()
 
 router.post("/bitcoin/getbalances", validateId, bitcoinControllers.getbalancesPostController)
+router.post("/bitcoin/getaddress", validateId, bitcoinControllers.getaddressPostController)
+
 //router.post("/bitcoin/newtransaction",)
-//router.post("/bitcoin/getaddress",)
 
 
