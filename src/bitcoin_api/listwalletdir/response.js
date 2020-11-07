@@ -1,6 +1,6 @@
 const BaseResponse = require("../base/io/BaseResponse")
 
-exports = class Request extends BaseResponse {
+module.exports = class Request extends BaseResponse {
     constructor(htmlResponse) {
         super(htmlResponse)
         if (!this.error && htmlResponse?.data?.result) {
@@ -10,4 +10,4 @@ exports = class Request extends BaseResponse {
             this.success = false
         }
     }
-}
+} 

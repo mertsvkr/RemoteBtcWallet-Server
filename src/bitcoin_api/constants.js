@@ -6,5 +6,5 @@ const RPC_CONNECTION_MAIN_URL = "http://" + RPC_USER + ":" + RPC_PASSWORD + "@12
 const RPC_CONNECTION_TESTNET_URL = "http://" + RPC_USER + ":" + RPC_PASSWORD + "@127.0.0.1:18332/" //for test network
 
 //choose one of them according to your network decision. -testnet or real network.
-exports.RPC_URL = RPC_CONNECTION_TESTNET_URL
+module.exports.RPC_URL = RPC_CONNECTION_TESTNET_URL
 
