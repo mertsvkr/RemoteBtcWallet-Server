@@ -7,4 +7,4 @@ router.post("/bitcoin/getbalances", validateId, bitcoinControllers.getbalancesPo
 router.post("/bitcoin/getaddress", validateId, bitcoinControllers.getaddressPostController)
 router.post("/bitcoin/newtransaction", validateId, bitcoinControllers.newtransactionPostController)
 
-
+module.exports = router
