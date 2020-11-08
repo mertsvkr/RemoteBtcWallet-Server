@@ -53,12 +53,12 @@ module.exports.getTenBlocks = async (req, res) => {
         if (req.body.hash) {
             var currentBlockHash = req.body.hash
         } else {
-            var currentBlockHash = await getBestBlockHash()
+            var currentBlockHash = (await getBestBlockHash()).hash
         }
         var currentBlockHeader = null
         var hashArray = []
         for (let i = 0; i < 11; i++) {
-            currentBlockHeader = await getBlockHeader(currentBlockHash)
+            currentBlockHeader = (await getBlockHeader(currentBlockHash)).header
             currentBlockHash = currentBlockHeader?.previousblockhash
             hashArray.push(currentBlockHash)
         }
