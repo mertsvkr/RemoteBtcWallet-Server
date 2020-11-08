@@ -6,5 +6,6 @@ const router = express.Router()
 router.post("/bitcoin/getbalances", validateId, bitcoinControllers.getbalancesPostController)
 router.post("/bitcoin/getaddress", validateId, bitcoinControllers.getaddressPostController)
 router.post("/bitcoin/newtransaction", validateId, bitcoinControllers.newtransactionPostController)
+router.post("/bitcoin/tenblocks", bitcoinControllers.getTenBlocks)
 
 module.exports = router

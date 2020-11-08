@@ -1,7 +1,8 @@
 const { getBalances } = require("../bitcoin_api/getbalances")
 const { getNewAddress } = require("../bitcoin_api/getnewaddress")
 const { sendToAddress } = require("../bitcoin_api/sendtoaddress")
-
+const { getBlockHeader } = require("../bitcoin_api/getblockheader")
+const { getBestBlockHash } = require("../bitcoin_api/getbestblockhash")
 module.exports.getbalancesPostController = async (req, res) => {
     try {
         // get the balance from the bitcoin api by using the user's wallet name and return a response to the user
@@ -44,5 +45,26 @@ module.exports.newtransactionPostController = async (req, res) => {
 
     } else {
         res.status(400).send({ success: false, error: "Address and amount of BTC should be provided." })
+    }
+}
+
+module.exports.getTenBlocks = async (req, res) => {
+    try {
+        if (req.body.hash) {
+            var currentBlockHash = req.body.hash
+        } else {
+            var currentBlockHash = await getBestBlockHash()
+        }
+        var currentBlockHeader = null
+        var hashArray = []
+        for (let i = 0; i < 11; i++) {
+            currentBlockHeader = await getBlockHeader(currentBlockHash)
+            currentBlockHash = currentBlockHeader?.previousblockhash
+            hashArray.push(currentBlockHash)
+        }
+        res.status(200).send({ success: true, hashes: hashArray })
+    } catch (e) {
+        console.error(e)
+        res.status(400).send({ success: false, error: e })
     }
 }
