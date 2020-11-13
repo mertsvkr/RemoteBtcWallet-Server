@@ -3,7 +3,6 @@ const { RPC_URL } = require("../../constants")
 
 const axiosBaseInstance = axios.create({
     baseURL: RPC_URL,
-    timeout: 30000,
     responseType: 'json'
 });
 
