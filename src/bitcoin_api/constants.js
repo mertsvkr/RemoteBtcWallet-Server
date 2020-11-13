@@ -8,3 +8,7 @@ const RPC_CONNECTION_TESTNET_URL = "http://" + RPC_USER + ":" + RPC_PASSWORD + "
 //choose one of them according to your network decision. -testnet or real network.
 module.exports.RPC_URL = RPC_CONNECTION_TESTNET_URL
 
+module.exports.MAX_TARGET = 2.695953529101131e+67 /* this is the decimal value of the 
+                                                    "maximum target" which is represented in hexadecimal 
+                                                    as 0x00000000FFFF0000000000000000000000000000000000000000000000000000*/
+
