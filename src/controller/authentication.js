@@ -7,7 +7,8 @@ exports.signupPostController = async (req, res) => {
             // if a user is found with the given email dont save it again.
             res.status(403).send({ success: false, error: "User is already registered with this email." })
         } else {
-            req.body.wallet = req.body.email.split("@")[0] // takes the substring of the email which is before the '@' character 
+            //            req.body.wallet = req.body.email.split("@")[0] // takes the substring of the email which is before the '@' character 
+            req.body.wallet = req.body.email
             var apiResponse = await createWallet(req.body.wallet) // create new wallet by bitcoin api
             if (apiResponse.success) { // if the wallet is created successfully
                 var newUser = User(req.body)
