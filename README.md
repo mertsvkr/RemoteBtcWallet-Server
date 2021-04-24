@@ -19,8 +19,8 @@ This is the backend of the project which allows users to create a Bitcoin wallet
 2. Clone the repository.
 3. Install dependencies. You can use ```npm install``` or ```yarn```
 4. ```.env``` file must be created. The file should contain the following environment variables:
-- ```PORT```: You should specify the port you want to use for your API.
-- ```MONGODB_URL```: Your MongoDB database URL.
+   - ```PORT```: You should specify the port you want to use for your API.
+   -   ```MONGODB_URL```: Your MongoDB database URL.
 
 # How to use?
 ### Use in the Bitcoin test network
